@@ -1,0 +1,57 @@
+================================================================================
+GRADIENT BOOSTING + LOG TRANSFORMATION - TARGET: SMAPE < 30%
+================================================================================
+Start time: 2025-10-23 15:22:04
+Log file: training_log_20251023_152204.txt
+================================================================================
+
+[1/8] Loading data...
+   Train: (495387, 2), Test: (55043, 1)
+   Price range: 0 - 14176231
+   Price mean: 1451.72, median: 435.00
+   ⏱️  Step time: 0.5s
+
+[2/8] Extracting comprehensive features...
+   Extracted 31 numerical features
+   ⏱️  Step time: 8.6s
+
+[3/8] Testing preprocessing approaches...
+   Processing: v1_notok...
+   Processing: v1_tok...
+   Processing: v2_notok...
+   Processing: v2_tok...
+   Processing: v3_tok...
+   ⏱️  Step time: 1.4m
+
+[4/8] Preparing train/validation split...
+   Train: 421078, Val: 74309
+   ⏱️  Step time: 0.2s
+
+[5/8] Testing vectorization strategies...
+   ⏱️  Step time: 0.0s
+
+[6/8] Setting up model configurations...
+   ⏱️  Step time: 0.0s
+
+[7/8] SYSTEMATIC TESTING (this will take time)...
+================================================================================
+Total configurations to test: 180
+Testing ONLY with log transformation (better results)
+================================================================================
+
+================================================================================
+Preprocessing: v1_notok, Vectorization: tfidf_5k_12
+================================================================================
+   Feature shape: (421078, 5031)
+   [1/180] ✗ GB_100_5_lr01_log: 69.47% SMAPE (train: 100.4s) [elapsed: 3.3m]
+   🎉 NEW BEST: 69.47% SMAPE
+   [2/180] ✗ GB_150_7_lr01_log: 66.68% SMAPE (train: 210.5s) [elapsed: 6.8m]
+   🎉 NEW BEST: 66.68% SMAPE
+   [3/180] ✗ GB_200_7_lr01_log: 65.97% SMAPE (train: 275.8s) [elapsed: 11.4m]
+   🎉 NEW BEST: 65.97% SMAPE
+   [4/180] ✗ GB_200_10_lr008_log: 63.74% SMAPE (train: 437.3s) [elapsed: 18.7m]
+   🎉 NEW BEST: 63.74% SMAPE
+   [5/180] ✗ GB_300_8_lr005_log: 65.64% SMAPE (train: 496.5s) [elapsed: 27.0m]
+   [6/180] ✗ GB_300_10_lr008_log: 62.51% SMAPE (train: 631.0s) [elapsed: 37.5m]
+   🎉 NEW BEST: 62.51% SMAPE
+   [7/180] ✗ GB_400_10_lr005_log: 63.13% SMAPE (train: 854.8s) [elapsed: 51.8m]
